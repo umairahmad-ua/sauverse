@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sauverse - Innovating with Intelligent Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-center mb-4 text-gray-800;
+        }
+        .section-subtitle {
+            @apply text-center text-gray-600 mb-12 max-w-2xl mx-auto;
+        }
+        .project-card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 flex flex-col; /* Added flex for consistent card height */
+        }
+        .project-card img {
+            @apply w-full h-56 object-cover; /* Fixed height for project images */
+        }
+        .project-card .p-6 {
+            @apply flex-grow; /* Allows content to take available space */
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-100 hover:text-indigo-700 transition-colors;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .btn {
+            @apply px-6 py-3 rounded-lg font-semibold shadow-md transition-transform transform hover:scale-105;
+        }
+        .btn-primary {
+            @apply bg-indigo-600 text-white hover:bg-indigo-700;
+        }
+        .btn-secondary {
+            @apply bg-gray-200 text-indigo-700 hover:bg-gray-300;
+        }
+        /* Custom scrollbar for a cleaner look - optional */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-indigo-600">Sauverse</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#hero" class="nav-link">Home</a>
+                        <a href="#about" class="nav-link">About Us</a>
+                        <a href="#expertise" class="nav-link">Expertise</a>
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger icon -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <!-- Close icon (hidden by default) -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#hero" class="block nav-link text-center">Home</a>
+                <a href="#about" class="block nav-link text-center">About Us</a>
+                <a href="#expertise" class="block nav-link text-center">Expertise</a>
+                <a href="#projects" class="block nav-link text-center">Projects</a>
+                <a href="#contact" class="block nav-link text-center">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg text-white pt-32 pb-20 md:pt-40 md:pb-28">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Welcome to <span class="text-yellow-300">Sauverse</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-indigo-100">
+                Pioneering Intelligent Solutions with GenAI, Agentic AI, LLMs, RAG, Machine Learning, and Advanced Data Science.
+            </p>
+            <a href="#projects" class="btn btn-primary text-lg mr-4">Our Projects</a>
+            <a href="#contact" class="btn btn-secondary text-lg">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">About Sauverse</h2>
+            <p class="section-subtitle">
+                At Sauverse, we are dedicated to pushing the boundaries of artificial intelligence and software development. Our mission is to empower businesses with cutting-edge technologies, transforming complex challenges into innovative opportunities. We believe in a future shaped by intelligent systems, and we're here to build it.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-lg ">
+                    <svg class="w-16 h-16 text-indigo-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Innovation</h3>
+                    <p class="text-gray-600">We thrive on innovation, constantly exploring new AI paradigms and technologies.</p>
+                </div>
+                <div class="p-6 rounded-lg ">
+                     <svg class="w-16 h-16 text-indigo-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Quality</h3>
+                    <p class="text-gray-600">Delivering robust, scalable, and high-quality solutions is our top priority.</p>
+                </div>
+                <div class="p-6 rounded-lg ">
+                    <svg class="w-16 h-16 text-indigo-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Collaboration</h3>
+                    <p class="text-gray-600">We work closely with our clients to understand their needs and achieve shared success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Expertise Section -->
+    <section id="expertise" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">Our Expertise</h2>
+            <p class="section-subtitle">
+                We specialize in a range of advanced AI technologies and software development practices to deliver impactful solutions.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Generative AI (GenAI)</h3>
+                    <p class="text-gray-600">Developing systems that can create novel content, from text and images to code and complex data structures.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Agentic AI</h3>
+                    <p class="text-gray-600">Building intelligent agent-based systems that can perceive, reason, act, and collaborate autonomously.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Large Language Models (LLMs)</h3>
+                    <p class="text-gray-600">Fine-tuning and deploying LLMs for natural language understanding, generation, and interaction.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Retrieval Augmented Generation (RAG)</h3>
+                    <p class="text-gray-600">Enhancing LLMs with external knowledge bases to provide more accurate and context-aware responses.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Machine Learning</h3>
+                    <p class="text-gray-600">Designing and implementing ML models for prediction, classification, clustering, and anomaly detection.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Data Science & Analytics</h3>
+                    <p class="text-gray-600">Extracting actionable insights from complex datasets through advanced statistical analysis and visualization.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">MCP Server Solutions</h3>
+                    <p class="text-gray-600">Developing and managing robust Mission Critical Platform (MCP) server environments for high-availability systems.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Modern Web Development</h3>
+                    <p class="text-gray-600">Crafting responsive, high-performance web applications using cutting-edge frameworks and technologies.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Custom Software Solutions</h3>
+                    <p class="text-gray-600">Designing and developing bespoke software tailored to unique business requirements and challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">Our Flagship Projects</h2>
+            <p class="section-subtitle">
+                Explore some of the innovative solutions we've delivered, showcasing our expertise in AI and software engineering. We are constantly pushing the boundaries of what's possible.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Original Projects -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/7C3AED/FFFFFF?text=ContentSpark+Suite" alt="ContentSpark Suite - GenAI Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">ContentSpark Suite (GenAI)</h3>
+                        <p class="text-sm text-gray-600 mb-3">An AI-powered platform that generates engaging marketing copy, social media posts, and ad creatives.</p>
+                        <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">GenAI</span>
+                        <span class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">NLP</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/DB2777/FFFFFF?text=UrbanFlow+OS" alt="UrbanFlow OS - Agentic AI Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">UrbanFlow OS (Agentic AI)</h3>
+                        <p class="text-sm text-gray-600 mb-3">A decentralized network of intelligent agents optimizing traffic, energy, and public services in smart cities.</p>
+                        <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Agentic AI</span>
+                        <span class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">IoT</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/10B981/FFFFFF?text=LexiMind" alt="LexiMind - LLM Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">LexiMind (LLM)</h3>
+                        <p class="text-sm text-gray-600 mb-3">A secure LLM-based tool assisting legal professionals by rapidly analyzing complex legal documents.</p>
+                        <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">LLM</span>
+                        <span class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">LegalTech</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/F59E0B/FFFFFF?text=MediQuery+RAG" alt="MediQuery RAG - RAG Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">MediQuery RAG</h3>
+                        <p class="text-sm text-gray-600 mb-3">Empowers medical researchers with precise insights from vast medical databases using RAG technology.</p>
+                        <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">RAG</span>
+                        <span class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">HealthTech</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Krypt+Web3" alt="Krypt - Web 3.0 Application" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">Krypt - Web 3.0 Platform</h3>
+                        <p class="text-sm text-gray-600 mb-3">A pioneering Web 3.0 application integrating blockchain technology for secure and decentralized transactions.</p>
+                        <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Blockchain</span>
+                        <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">React.js</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/EC4899/FFFFFF?text=HooBank+UI" alt="HooBank - Modern UI/UX Website" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">HooBank - Fintech UI/UX</h3>
+                        <p class="text-sm text-gray-600 mb-3">A modern UI/UX showcase for a financial services platform, built with a focus on user experience.</p>
+                        <span class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">UI/UX</span>
+                        <span class="inline-block bg-purple-100 text-purple-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Next.js</span>
+                    </div>
+                </div>
+
+                <!-- New GenAI Projects -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=ArtisanAI" alt="ArtisanAI - GenAI Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">ArtisanAI (GenAI)</h3>
+                        <p class="text-sm text-gray-600 mb-3">Generative AI for creating unique digital art and music compositions based on user prompts.</p>
+                        <span class="inline-block bg-violet-100 text-violet-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">GenAI</span>
+                        <span class="inline-block bg-rose-100 text-rose-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Creative AI</span>
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <img src="https://placehold.co/600x400/D946EF/FFFFFF?text=CodeWeaver" alt="CodeWeaver - GenAI Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">CodeWeaver (GenAI)</h3>
+                        <p class="text-sm text-gray-600 mb-3">AI-assisted code generation and autocompletion tool to accelerate software development cycles.</p>
+                        <span class="inline-block bg-fuchsia-100 text-fuchsia-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">GenAI</span>
+                        <span class="inline-block bg-sky-100 text-sky-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">DevTools</span>
+                    </div>
+                </div>
+
+                <!-- New Agentic AI Projects -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/0EA5E9/FFFFFF?text=EcoSim+Agents" alt="EcoSim Agents - Agentic AI Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">EcoSim Agents (Agentic AI)</h3>
+                        <p class="text-sm text-gray-600 mb-3">Multi-agent system for simulating ecological changes and predicting environmental impact.</p>
+                        <span class="inline-block bg-sky-100 text-sky-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Agentic AI</span>
+                        <span class="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Simulation</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/F97316/FFFFFF?text=SupplyChain+Oracle" alt="SupplyChain Oracle - Agentic AI Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">SupplyChain Oracle (Agentic AI)</h3>
+                        <p class="text-sm text-gray-600 mb-3">Autonomous agents for optimizing global supply chains, managing logistics and inventory in real-time.</p>
+                        <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Agentic AI</span>
+                        <span class="inline-block bg-amber-100 text-amber-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Logistics</span>
+                    </div>
+                </div>
+
+                <!-- New LLM Projects -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/14B8A6/FFFFFF?text=EduChat+LLM" alt="EduChat LLM - LLM Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">EduChat LLM</h3>
+                        <p class="text-sm text-gray-600 mb-3">An interactive LLM-powered tutor for personalized learning experiences across various subjects.</p>
+                        <span class="inline-block bg-teal-100 text-teal-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">LLM</span>
+                        <span class="inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">EdTech</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=SentimentAnalyzer+LLM" alt="SentimentAnalyzer LLM - LLM Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">SentimentAnalyzer LLM</h3>
+                        <p class="text-sm text-gray-600 mb-3">Advanced LLM for nuanced sentiment analysis of customer feedback and social media trends.</p>
+                        <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">LLM</span>
+                        <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Analytics</span>
+                    </div>
+                </div>
+
+                <!-- New RAG Projects -->
+                 <div class="project-card">
+                    <img src="https://placehold.co/600x400/EF4444/FFFFFF?text=KnowledgeBase+Navigator" alt="KnowledgeBase Navigator - RAG Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">KnowledgeBase Navigator (RAG)</h3>
+                        <p class="text-sm text-gray-600 mb-3">RAG system for enterprise knowledge management, allowing natural language queries on internal documents.</p>
+                        <span class="inline-block bg-red-100 text-red-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">RAG</span>
+                        <span class="inline-block bg-gray-100 text-gray-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Enterprise AI</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/FCD34D/000000?text=FactChecker+AI" alt="FactChecker AI - RAG Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">FactChecker AI (RAG)</h3>
+                        <p class="text-sm text-gray-600 mb-3">AI tool using RAG to verify claims and provide sourced explanations by querying trusted databases.</p>
+                        <span class="inline-block bg-amber-100 text-amber-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">RAG</span>
+                        <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Information Retrieval</span>
+                    </div>
+                </div>
+
+                <!-- New Machine Learning Projects -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/34D399/FFFFFF?text=PredictiveMaintenance+ML" alt="PredictiveMaintenance ML - Machine Learning Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">PredictiveMaintenance ML</h3>
+                        <p class="text-sm text-gray-600 mb-3">Machine learning models to predict equipment failures in industrial settings, optimizing maintenance schedules.</p>
+                        <span class="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                        <span class="inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Industrial AI</span>
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=FraudDetect+ML" alt="FraudDetect ML - Machine Learning Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">FraudDetect ML</h3>
+                        <p class="text-sm text-gray-600 mb-3">Advanced ML algorithms for real-time fraud detection in financial transactions and online services.</p>
+                        <span class="inline-block bg-violet-100 text-violet-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                        <span class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">FinTech</span>
+                    </div>
+                </div>
+
+                <!-- New MCP Server Project -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/78716C/FFFFFF?text=HA+Infra+MCP" alt="HA Infra MCP - MCP Server Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">HA Infrastructure (MCP)</h3>
+                        <p class="text-sm text-gray-600 mb-3">Design and deployment of a high-availability Mission Critical Platform server infrastructure for a major telecom provider.</p>
+                        <span class="inline-block bg-stone-100 text-stone-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">MCP Server</span>
+                        <span class="inline-block bg-neutral-100 text-neutral-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Infrastructure</span>
+                    </div>
+                </div>
+
+                <!-- New Data Science Projects -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/FB923C/FFFFFF?text=RetailInsight+DS" alt="RetailInsight DS - Data Science Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">RetailInsight DS</h3>
+                        <p class="text-sm text-gray-600 mb-3">Data science platform for retail analytics, providing insights into customer behavior, sales trends, and inventory optimization.</p>
+                        <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Data Science</span>
+                        <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Retail</span>
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <img src="https://placehold.co/600x400/4ADE80/000000?text=HealthcareAnalytics+DS" alt="HealthcareAnalytics DS - Data Science Project" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700">HealthcareAnalytics DS</h3>
+                        <p class="text-sm text-gray-600 mb-3">Analyzing patient data to improve diagnostic accuracy, predict disease outbreaks, and personalize treatment plans.</p>
+                        <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Data Science</span>
+                        <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">HealthTech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="section-title">Let's Build The Future Together</h2>
+            <p class="section-subtitle">
+                Interested in leveraging AI for your business? Have a project idea? We'd love to hear from you.
+            </p>
+            <div class="mt-8">
+                <p class="text-lg text-gray-700 mb-2">
+                    Email us at: <a href="mailto:umair.ahmad5966@gmail.com" class="text-indigo-600 hover:text-indigo-800 font-semibold">umair.ahmad5966@gmail.com</a>
+                </p>
+                <p class="text-lg text-gray-700">
+                    Or call us: <a href="tel:+923085966841" class="text-indigo-600 hover:text-indigo-800 font-semibold">+92 308 5966841</a>
+                </p>
+            </div>
+            <div class="mt-10">
+                 <a href="mailto:umair.ahmad5966@gmail.com" class="btn btn-primary text-lg">Send Us An Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; <span id="currentYear"></span> Sauverse. All rights reserved.</p>
+            <p class="text-sm text-gray-400 mt-1">Innovating with Intelligence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = mobileMenuButton.querySelector('svg:first-child');
+        const closeIcon = mobileMenuButton.querySelector('svg:last-child');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked & smooth scroll
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const isMobileLink = this.closest('#mobile-menu');
+                if (isMobileLink && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navbarHeight = document.querySelector('nav').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                } else if (targetId === '#') {
+                     e.preventDefault();
+                     window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            });
+        });
+
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Fallback for project images
+        document.querySelectorAll('.project-card img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.src = 'https://placehold.co/600x400/E5E7EB/9CA3AF?text=Image+Not+Available';
+                this.alt = 'Image not available';
+            });
+        });
+    </script>
+
+</body>
+</html>
